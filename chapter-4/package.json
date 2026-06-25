@@ -1,0 +1,22 @@
+{
+  "name": "chapter-4",
+  "version": "1.0.0",
+  "description": "A dockerized fullstack application that uses a NodeJS backend, a PostgreSQL database, a Prisma ORM, and JWT Auth.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch --env-file=.env --experimental-strip-types --experimental-sqlite ./src/server.js & pid=$!; until curl -fs http://127.0.0.1:5000/ >/dev/null 2>&1; do sleep 0.2; done; open http://localhost:5000/?auth=1; wait $pid",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@prisma/client": "^7.8.0",
+    "bcryptjs": "^3.0.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.22.0",
+    "prisma": "^7.8.0"
+  }
+}
